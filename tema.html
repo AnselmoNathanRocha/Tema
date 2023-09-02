@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ddd;
+        }
+
+        .tema {
+            -webkit-appearance: none;
+            visibility: hidden;
+            display: none;
+        }
+
+        .check {
+            position: absolute;
+            display: block;
+            width: 90px;
+            height: 40px;
+            background-color: #202020;
+            cursor: pointer;
+            border-radius: 30px;
+            overflow: hidden;
+            transition: .4s ease-in-out;
+        }
+
+        .tema:checked ~ .check {
+            background-color: #ddd;
+            box-shadow: 0 0 0 1200px #303030;
+        }
+
+        .pointerUm, .pointerDois {
+            position: absolute;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background-image: url('sol.png');
+            margin: 3px;
+            transition: .4s ease-in-out;
+            cursor: pointer;
+        }
+
+        .pointerDois {
+            scale: 0;
+        }
+
+        .tema:checked ~ .pointerUm {
+            translate: 50px;
+            rotate: 260deg;
+            scale: 0;
+        }
+
+        .tema:checked ~ .pointerDois {
+            translate: 50px;
+            rotate: 260deg;
+            scale: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <label>
+            <input type="checkbox" class="tema">
+            <span class="check"></span>
+            <img src="sol.png" class="pointerUm">
+            <img src="lua.png" class="pointerDois">
+        </label>
+    </div>
+</body>
+</html>
